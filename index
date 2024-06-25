@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <section class="hero bg-success fw-bold text-white py-4">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Formulir Input Data TPS 003</h1>
+        </div>
+      </div>
+    </section>
+    <form id="form" class="container m-4 pl-4" method="POST" onsubmit="sendToWhatsApp(event)">
+      <div class="form-group">
+        <label for="nama">Nama</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nama"
+          name="Nama"
+          placeholder="Nama pemilih"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Kelamin</label>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" value="Laki-laki" id="genderMale">
+            <label class="form-check-label" for="genderMale">
+              Laki-laki
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" value="Perempuan" id="genderFemale">
+            <label class="form-check-label" for="genderFemale">
+              Perempuan
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>RT/RW</label>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="opsi" value="004/002" id="rtRw1">
+            <label class="form-check-label" for="rtRw1">
+              004/002
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="opsi" value="005/002" id="rtRw2">
+            <label class="form-check-label" for="rtRw2">
+              005/002
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="opsi" value="008/002" id="rtRw3">
+            <label class="form-check-label" for="rtRw3">
+              008/002
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>No DPT</label>
+        <input class="form-control" type="number" placeholder="Nomor DPT" name="Nodpt" id="nodpt">
+      </div> 
+
+      <div class="form-group">
+        <label>Keterangan 1</label>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ops2" value="P. Sesuai" id="keterangan1Option1">
+            <label class="form-check-label" for="keterangan1Option1">
+              P. Sesuai
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ops2" value="P. Ubah" id="keterangan1Option2">
+            <label class="form-check-label" for="keterangan1Option2">
+              P. Ubah
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="ops2" value="P. Tersaring" id="keterangan1Option3">
+            <label class="form-check-label" for="keterangan1Option3">
+              P. Tersaring
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Keterangan 2</label>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="1. Meninggal" id="keterangan2Option1">
+            <label class="form-check-label" for="keterangan2Option1">
+              1. Meninggal
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="2. Ganda" id="keterangan2Option2">
+            <label class="form-check-label" for="keterangan2Option2">
+              2. Ganda
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="3. Dibawah Umur" id="keterangan2Option3">
+            <label class="form-check-label" for="keterangan2Option3">
+              3. Dibawah Umur
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="4. Pindah Domisili" id="keterangan2Option4">
+            <label class="form-check-label" for="keterangan2Option4">
+              4. Pindah Domisili
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="5. WNA" id="keterangan2Option5">
+            <label class="form-check-label" for="keterangan2Option5">
+              5. WNA
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="6. TNI" id="keterangan2Option6">
+            <label class="form-check-label" for="keterangan2Option6">
+              6. TNI
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="7. POLRI" id="keterangan2Option7">
+            <label class="form-check-label" for="keterangan2Option7">
+              7. POLRI
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="tersaring" value="8. TPS Tidak Sesuai" id="keterangan2Option8">
+            <label class="form-check-label" for="keterangan2Option8">
+              8. TPS Tidak Sesuai
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Tanggal Coklit</label>
+        <input type="date" class="form-control" id="tanggal" name="tanggal">
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="btn btn-success mt-3 px-4" type="submit" id="submit-button">
+            Kirim Sekarang
+          </button>
+        </div>
+      </div>
+    </form>
+    <div
+      id="message"
+      style="
+        display: none;
+        margin: 20px;
+        font-weight: bold;
+        color: green;
+        padding: 8px;
+        background-color: beige;
+        border-radius: 4px;
+        border-color: aquamarine;
+      "
+    ></div>
+    <script>
+      function sendToWhatsApp(event) {
+        event.preventDefault();
+        const form = document.getElementById('form');
+        let msg = `*Data Pemilih TPS 003*%0a`;
+        msg += `%0a`;
+        msg += `*Nama:* ${form.nama.value}%0a`;
+        msg += `*Kelamin:* ${form.gender.value}%0a`;
+        msg += `*RT/RW:* ${form.opsi.value}%0a`;
+        msg += `*No DPT:* ${form.Nodpt.value}%0a`;
+        msg += `*Keterangan 1:* ${form.ops2.value}%0a`;
+        msg += `*Keterangan 2:* ${form.tersaring.value}%0a`;
+        msg += `*Tanggal Coklit:* ${form.tanggal.value}`;
+        const waUrl = `https://wa.me/6285156850068?text=${msg}`;
+        window.open(waUrl, '_blank');
+      }
+    </script>
+  </body>
+</html>
